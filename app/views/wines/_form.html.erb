@@ -16,6 +16,24 @@
     <%= form.text_field :name %>
   </div>
 
+  <ul>
+     <%= form.fields_for :assemblies do |assemblies_form| %>
+        
+        <li>
+          
+          <%= assemblies_form.label " " %>
+          <%= assemblies_form.hidden_field :strain_id %>
+        </li>
+
+        <li>
+          
+          <%= assemblies_form.number_field :percentage %>
+        </li>
+      
+    <% end %>
+  </ul> 
+
+
   <div class="actions">
     <%= form.submit %>
   </div>
